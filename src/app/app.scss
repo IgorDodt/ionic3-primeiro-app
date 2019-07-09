@@ -1,0 +1,97 @@
+ion-card img {
+    border-radius: 10px;
+    float: left;
+    width: 100%;
+    margin-bottom: inherit;
+}
+
+img.img-details {
+    border-radius: 10px;
+    float: left;
+    width: 50%;
+    margin-bottom: inherit;
+}
+
+h2.feed-title {
+    color: black;
+}
+
+p.feed-date {
+    color: blue;
+}
+
+.button-block-ios {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 10px;
+}
+
+.icon-div {
+    display: -webkit-inline-box;
+    position: absolute;
+    padding-left: inherit;
+}
+
+// custom icons
+ion-icon {
+    &[class*="prefix-"] {
+        padding: 6px;
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background-color: transparent;
+        width: 1em;
+        height: 1em;
+    }
+
+    &[class*="prefix-likes"] {
+        background-image: url(../assets/icon/heart.svg);
+    }
+
+    &[class*="prefix-star"] {
+        background-image: url(../assets/icon/star.svg);
+    }
+
+    &[class*="prefix-calendar-released"] {
+        background-image: url(../assets/icon/calendar.svg);
+    }
+
+    &[class*="prefix-calendar-upcoming"] {
+        background-image: url(../assets/icon/calendar-upcoming.svg);
+    }
+    &[class*="prefix-tv"] {
+        background-image: url(../assets/icon/tv.svg);
+    }
+}
+
+ion-card {
+    display: contents;
+    overflow: hidden;
+}
+
+ion-col.col {
+    margin-left: 23px;
+}
+
+ion-col.col-upcoming.col {
+    margin-left: 3px;
+}
+
+.teste {
+    background: aliceblue;
+    border-radius: 20px;
+
+    perspective: 1px;
+    border-collapse: separate !important
+}
+
+.card-ios p {
+    margin: 0 0 2px;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 500;
+}
+
+h1.h1-reviews {
+    padding-left: 15px;
+}

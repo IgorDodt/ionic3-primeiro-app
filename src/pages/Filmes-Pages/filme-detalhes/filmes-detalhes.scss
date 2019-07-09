@@ -1,0 +1,94 @@
+    h2.filme-detalhes-title {
+        color: black;
+    }
+
+    p.filme-detalhes-date {
+        color: blue;
+    }
+
+    .criticas-card {
+        padding: 13px 16px 14px;
+        font-size: 1.4rem;
+        line-height: 1.4;
+        display: block;
+        border-radius: 10px;
+        background: bisque;
+        margin-top: inherit;
+    }
+
+    .related-card {
+        width: 500px !important;
+        display: inline-block;
+    }
+
+    ion-card {
+        display: contents;
+        overflow: hidden;
+    }
+
+    ion-card.related-card.card.card-ios {
+        width: 120px !important;
+        height: 180px !important;
+        border-radius: 20px;
+    }
+
+    .div-related {
+        background: #32a3a3;
+        border-radius: 10px;
+    }
+
+    .scroll-zoom-wrapper {
+        white-space: nowrap;
+    }
+
+    img.related-img {
+        width: 100%;
+    }
+
+    
+    ion-scroll {
+        min-height: 200px; 
+        height: auto;
+
+            .scroll-content {
+            padding: 0px !important;
+        }    
+    }
+
+    ion-card-content {
+        display: -webkit-inline-box;
+    }
+
+    ion-card-content.details-movie.card-content.card-content-ios {
+        display: -webkit-box;
+    }
+
+    .card-content-ios {
+        padding: 13px 16px 14px;
+        font-size: 1.4rem;
+        line-height: 1.4;
+        display: block;
+        border-radius: 10px;
+
+    }
+
+    //.details-movie {
+        // background: #eb2929;
+        // margin-left: auto
+
+    //}
+
+    .sinopse-card {
+        padding: 13px 16px 14px;
+        font-size: 1.4rem;
+        line-height: 1.4;
+        display: inline-block;
+        border-radius: 10px;
+        background: aliceblue;
+        margin-block-end: inherit;
+
+    }
+
+    //.masters {
+        //background: black;
+    //

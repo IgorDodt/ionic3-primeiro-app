@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Populares</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+      <ion-segment [(ngModel)]="icons" color="secondary">
+        <ion-segment-button  (ionSelect)="mudarTabFilmes()">
+          <ion-icon name="videocam"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button  (ionSelect)="mudarTabSeries()">
+          <ion-icon name="play"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="teste">
+    <ion-card *ngFor="let filme of lista_filmes" class="masters">
+      <ion-item>
+        <div id="name">
+          <h1 class="feed-title"><strong>{{ filme.original_title }}</strong></h1>
+        </div>
+      </ion-item>
+
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path">
+
+
+      <ion-card-content>
+        <p>{{filme.overview}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <ion-icon name="prefix-likes"></ion-icon>
+          <div class="icon-div"><strong>{{filme.vote_count}}</strong></div>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="prefix-star"></ion-icon>
+          <div class="icon-div"><strong>{{filme.vote_average}}</strong></div>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="prefix-calendar-released"></ion-icon>
+          <div class="icon-div"><strong>{{filme.release_date | date: 'yyyy'}}</strong></div>
+        </ion-col>
+
+
+      </ion-row>
+      <button ion-button block (click)="abrirDetalhes(filme)">Detalhes</button>
+    </ion-card>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Populares</ion-title>
+  </ion-navbar>
+
+  
+  <ion-toolbar>
+      <ion-segment [(ngModel)]="icons" color="secondary">
+        <ion-segment-button value="filme" (ionSelect)="mudarTabFilmes()">
+          <ion-icon name="videocam"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="serie" (ionSelect)="mudarTabSeries()">
+          <ion-icon name="play"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  
+
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="teste">
+    <ion-card *ngFor="let serie of lista_series" class="masters">
+      <ion-item>
+        <div id="name">
+          <h1 class="feed-title"><strong>{{ serie.original_name }}</strong></h1>
+        </div>
+      </ion-item>
+
+      <img [src]="'https://image.tmdb.org/t/p/w500' + serie.backdrop_path">
+
+      <ion-card-content>
+        <p>{{serie.overview}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <ion-icon name="prefix-likes"></ion-icon>
+          <div class="icon-div"><strong>{{serie.vote_count}}</strong></div>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="prefix-star"></ion-icon>
+          <div class="icon-div"><strong>{{serie.vote_average}}</strong></div>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="prefix-calendar-released"></ion-icon>
+          <div class="icon-div"><strong>{{serie.first_air_date | date: 'yyyy'}}</strong></div>
+        </ion-col>
+
+      </ion-row>
+      <button ion-button block (click)="abrirDetalhes(serie)">Detalhes</button>
+    </ion-card>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
