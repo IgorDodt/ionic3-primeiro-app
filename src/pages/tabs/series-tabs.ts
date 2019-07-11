@@ -11,8 +11,8 @@ export class SeriesTabsPage {
 
   tab1Root = SeriesPopularPage;
   tab2Root = SeriesTopsPage;
-  tabs3Root = SeriesLatestPage;
-  tab5Root = SeriesPesquisarPage;
+  tab3Root = SeriesLatestPage;
+  tab4Root = SeriesPesquisarPage;
 
   constructor() {
 

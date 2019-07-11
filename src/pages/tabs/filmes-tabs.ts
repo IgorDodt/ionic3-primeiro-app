@@ -12,7 +12,7 @@ export class FilmesTabsPage {
   tab1Root = FilmesPopularesPage;
   tab2Root = FilmesTopsPage;
   tab3Root = FilmesEmBrevePage;
-  tab5Root = FilmesPesquisarPage;
+  tab4Root = FilmesPesquisarPage;
 
   constructor() {
 

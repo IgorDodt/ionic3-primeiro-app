@@ -3,6 +3,8 @@ import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-an
 import { MovieProvider } from '../../../providers/movie/movie';
 import { SeriesPopularPage } from '../../Series-Pages/series-popular/series-popular';
 import { FilmesDetalhesPage } from '../filme-detalhes/filmes-detalhes';
+import { SeriesTabsPage } from '../../tabs/series-tabs';
+import { FilmesTabsPage } from '../../tabs/filmes-tabs';
 
 @IonicPage()
 @Component({
@@ -36,11 +38,11 @@ export class FilmesPopularesPage {
   }
 
   mudarTabSeries(){
-    this.navCtrl.setRoot(SeriesPopularPage)
+    this.navCtrl.setRoot(SeriesTabsPage)
   }
 
   mudarTabFilmes(){
-    this.navCtrl.setRoot(FilmesPopularesPage)
+    this.navCtrl.setRoot(FilmesTabsPage)
   }
 
   abrirLoading() {

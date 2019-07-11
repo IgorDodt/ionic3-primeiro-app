@@ -12,7 +12,6 @@ export class PerfilPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PerfilPage');
   }
 
 }

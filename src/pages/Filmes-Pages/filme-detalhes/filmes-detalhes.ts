@@ -6,10 +6,6 @@ import { MovieProvider } from '../../../providers/movie/movie';
 @Component({
   selector: 'page-filmes-detalhes',
   templateUrl: 'filmes-detalhes.html',
-
-  providers: [
-    MovieProvider
-  ]
 })
 export class FilmesDetalhesPage {
   public filme;
@@ -81,8 +77,6 @@ export class FilmesDetalhesPage {
     return this.review_resto;
   }
 
-
-
   getMovieReviews() {
     this.filmeidreviwes = this.navParams.get("id");
     this.movieProvider.getMoviesReviews(this.filmeidreviwes).subscribe(
@@ -114,7 +108,6 @@ export class FilmesDetalhesPage {
       data => {
         const objeto_retorno = data as any;
         this.lista_filmes_related = this.lista_filmes_related.concat(objeto_retorno['results']);
-        //console.log(this.lista_filmes_related)
         console.log(this.lista_filmes_related);
       }, error => {
         console.log(error);

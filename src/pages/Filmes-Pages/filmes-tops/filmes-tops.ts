@@ -8,10 +8,6 @@ import { SeriesTopsPage } from '../../Series-Pages/series-tops/series-tops';
 @Component({
   selector: 'page-filmes-tops',
   templateUrl: 'filmes-tops.html',
-
-  providers: [
-    MovieProvider
-  ]
 })
 export class FilmesTopsPage {
   public lista_filmes = new Array<any>();
@@ -20,7 +16,6 @@ export class FilmesTopsPage {
   public isRefreshing: boolean = false;
   public page = 1;
   public infiniteScroll;
-  //public nome_usuario: string = "Igor Dodt do Código";
 
   constructor(
     public navCtrl: NavController,
@@ -41,14 +36,14 @@ export class FilmesTopsPage {
     this.navCtrl.setRoot(FilmesTopsPage)
   }
 
-  abrirLoading() {
+  abrirLoading(){
     this.loader = this.loadingCtrl.create({
       content: "Carregando...",
     });
     this.loader.present();
   }
 
-  fecharLoading() {
+  fecharLoading(){
     this.loader.dismiss();
   }
 
@@ -74,9 +69,7 @@ export class FilmesTopsPage {
   carregarFilmes(newpage:boolean = false) {
     this.abrirLoading();
     this.movieProvider.getTopsMovies(this.page).subscribe(
-      data => {
-
-        //const response = data;
+      data =>{
         const objeto_retorno = data as any;
         if(newpage){
           this.lista_filmes = this.lista_filmes.concat(objeto_retorno['results']);
@@ -84,8 +77,6 @@ export class FilmesTopsPage {
         }else{
           this.lista_filmes = objeto_retorno['results'];
         }
-        
-        
         console.log(this.lista_filmes);
 
         this.fecharLoading();

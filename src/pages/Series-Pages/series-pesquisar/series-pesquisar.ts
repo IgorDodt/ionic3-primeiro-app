@@ -1,24 +1,16 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { MovieProvider } from '../../../providers/movie/movie';
-import { SeriesDetalhesPage } from '../series-detalhes/series-detalhes';
+import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 import { SeriesProvider } from '../../../providers/series/series';
-
-/**
- * Generated class for the SeriesPesquisarPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { SeriesDetalhesPage } from '../series-detalhes/series-detalhes';
+import { SeriesLatestPage } from '../series-latest/series-latest';
+import { FilmesEmBrevePage } from '../../Filmes-Pages/filmes-embreve/filmes-embreve';
+import { SeriesTabsPage } from '../../tabs/series-tabs';
+import { FilmesTabsPage } from '../../tabs/filmes-tabs';
 
 @IonicPage()
 @Component({
   selector: 'page-series-pesquisar',
   templateUrl: 'series-pesquisar.html',
-
-  providers: [
-    SeriesProvider
-  ]
 
 })
 export class SeriesPesquisarPage {public texto;
@@ -29,8 +21,6 @@ export class SeriesPesquisarPage {public texto;
   public loader;
   data: any;
 
-
-
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private serieProvider: SeriesProvider,
@@ -39,8 +29,16 @@ export class SeriesPesquisarPage {public texto;
 
   ionViewDidEnter() {
     this.pesquisar;
-    
   }
+
+  mudarTabSeries(){
+    this.navCtrl.setRoot(SeriesTabsPage);
+  }
+
+  mudarTabFilmes(){
+    this.navCtrl.setRoot(FilmesTabsPage);
+  }
+
   abrirLoading() {
     this.loader = this.loadingCtrl.create({
       content: "Carregando...",

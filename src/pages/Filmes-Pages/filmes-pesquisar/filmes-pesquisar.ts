@@ -1,26 +1,24 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 import { MovieProvider } from '../../../providers/movie/movie';
+import { FilmesTabsPage } from '../../tabs/filmes-tabs';
+import { SeriesTabsPage } from '../../tabs/series-tabs';
 import { FilmesDetalhesPage } from '../filme-detalhes/filmes-detalhes';
 
 @IonicPage()
 @Component({
   selector: 'page-filmes-pesquisar',
   templateUrl: 'filmes-pesquisar.html',
-
-  providers: [
-    MovieProvider
-  ]
 })
+
 export class FilmesPesquisarPage {
+  
   public texto;
   public lista_pesquisa = new Array<any>();
   public refresher;
   public isRefreshing: boolean = false;
   public loader;
   data: any;
-
-
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -30,8 +28,16 @@ export class FilmesPesquisarPage {
 
   ionViewDidEnter() {
     this.pesquisar;
-    
   }
+
+  mudarTabSeries(){
+    this.navCtrl.setRoot(SeriesTabsPage);
+  }
+
+  mudarTabFilmes(){
+    this.navCtrl.setRoot(FilmesTabsPage);
+  }
+
   abrirLoading() {
     this.loader = this.loadingCtrl.create({
       content: "Carregando...",

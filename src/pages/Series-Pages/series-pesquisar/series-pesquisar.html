@@ -2,36 +2,48 @@
   <ion-navbar>
     <ion-title>Pesquisar</ion-title>
   </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment color="secondary">
+      <ion-segment-button value="filme" (ionSelect)="mudarTabFilmes()">
+        <ion-icon name="videocam"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="serie" (ionSelect)="mudarTabSeries()">
+        <ion-icon name="play"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
   <ion-searchbar [(ngModel)]="texto" (search)="pesquisar(texto)" placeholder="Pesquisar Serie..."></ion-searchbar>
 </ion-header>
 
 <ion-content padding>
-  
-  <div class="teste">
-  <ion-card *ngFor="let pesquisa of lista_pesquisa" class="masters">
-    <ion-item>
-      <h1 class="feed-title"><strong>{{ pesquisa.original_title }}</strong></h1>
-    </ion-item>
-    <img [src]="'https://image.tmdb.org/t/p/w500/' + pesquisa.backdrop_path">
-    <ion-card-content>
-      <p>{{pesquisa.overview}}</p>
-    </ion-card-content>
 
-    <ion-row>
-      <ion-col>
-        <ion-icon name="prefix-likes"></ion-icon>
-        <div class="icon-div"><strong>{{pesquisa.vote_count}}</strong></div>
-      </ion-col>
-      <ion-col>
-        <ion-icon name="prefix-star"></ion-icon>
-        <div class="icon-div"><strong>{{pesquisa.vote_average}}</strong></div>
-      </ion-col>
-      <ion-col>
-        <ion-icon name="prefix-calendar-released"></ion-icon>
-        <div class="icon-div"><strong>{{pesquisa.release_date | date: 'yyyy'}}</strong></div>
-      </ion-col>
-    </ion-row>
-    <button ion-button block (click)="abrirDetalhes(pesquisa)">Detalhes</button>
-  </ion-card>
-</div>
+  <div class="teste">
+    <ion-card *ngFor="let pesquisa of lista_pesquisa" class="masters">
+      <ion-item>
+        <h1 class="feed-title"><strong>{{ pesquisa.original_title }}</strong></h1>
+      </ion-item>
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + pesquisa.backdrop_path">
+      <ion-card-content>
+        <p>{{pesquisa.overview}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <ion-icon name="prefix-likes"></ion-icon>
+          <div class="icon-div"><strong>{{pesquisa.vote_count}}</strong></div>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="prefix-star"></ion-icon>
+          <div class="icon-div"><strong>{{pesquisa.vote_average}}</strong></div>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="prefix-calendar-released"></ion-icon>
+          <div class="icon-div"><strong>{{pesquisa.release_date | date: 'yyyy'}}</strong></div>
+        </ion-col>
+      </ion-row>
+      <button ion-button block (click)="abrirDetalhes(pesquisa)">Detalhes</button>
+    </ion-card>
+  </div>
 </ion-content>

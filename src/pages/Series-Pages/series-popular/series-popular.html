@@ -6,7 +6,7 @@
 
   
   <ion-toolbar>
-      <ion-segment [(ngModel)]="icons" color="secondary">
+      <ion-segment color="secondary">
         <ion-segment-button value="filme" (ionSelect)="mudarTabFilmes()">
           <ion-icon name="videocam"></ion-icon>
         </ion-segment-button>
@@ -28,7 +28,7 @@
     <ion-card *ngFor="let serie of lista_series" class="masters">
       <ion-item>
         <div id="name">
-          <h1 class="feed-title"><strong>{{ serie.original_name }}</strong></h1>
+          <h1 class="feed-title"><strong>{{ serie.name }}</strong></h1>
         </div>
       </ion-item>
 

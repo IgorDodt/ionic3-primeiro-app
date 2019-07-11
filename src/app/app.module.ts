@@ -21,6 +21,8 @@ import { SeriesDetalhesPageModule } from '../pages/Series-Pages/series-detalhes/
 import { SeriesLatestPageModule } from '../pages/Series-Pages/series-latest/series-latest.module';
 import { SeriesTopsPageModule } from '../pages/Series-Pages/series-tops/series-tops.module';
 import { SeriesPesquisarPageModule } from '../pages/Series-Pages/series-pesquisar/series-pesquisar.module';
+import { MovieProvider } from '../providers/movie/movie';
+import { SeriesProvider } from '../providers/series/series';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { SeriesPesquisarPageModule } from '../pages/Series-Pages/series-pesquisa
   providers: [
     StatusBar,
     SplashScreen,
-    //MovieProvider,
+    MovieProvider,
+    SeriesProvider,
   ]
 })
 export class AppModule { }

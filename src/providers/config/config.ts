@@ -5,11 +5,11 @@ let config_key_name = "config";
 @Injectable()
 export class ConfigProvider {
 
-  //private config = {
-  //  showSlide: false,
-  //  name: "",
-  //  username: ""
-  //}
+  private config = {
+    showSlide: false,
+    name: "",
+    username: ""
+  }
 
   constructor() {
 
@@ -18,6 +18,7 @@ export class ConfigProvider {
     return localStorage.getItem(config_key_name);
   }
   setConfigData(showSlide?: boolean, name?: string, username?: string) {
+    
     let config = {
       showSlide: false,
       name: "",
@@ -34,6 +35,6 @@ export class ConfigProvider {
       config.username = username;
     }
 
-    localStorage.setItem(config_key_name,JSON.stringify(config));
+    localStorage.setItem(config_key_name, JSON.stringify(config));
   }
 }

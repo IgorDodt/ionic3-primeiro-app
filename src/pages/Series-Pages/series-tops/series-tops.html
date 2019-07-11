@@ -4,18 +4,18 @@
     <ion-title>Tops</ion-title>
   </ion-navbar>
 
-  
+
   <ion-toolbar>
-      <ion-segment [(ngModel)]="icons" color="secondary">
-        <ion-segment-button (ionSelect)="mudarTabFilmes()">
-          <ion-icon name="videocam"></ion-icon>
-        </ion-segment-button>
-        <ion-segment-button (ionSelect)="mudarTabSeries()">
-          <ion-icon name="play"></ion-icon>
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>
-  
+    <ion-segment color="secondary">
+      <ion-segment-button (ionSelect)="mudarTabFilmes()">
+        <ion-icon name="videocam"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button (ionSelect)="mudarTabSeries()">
+        <ion-icon name="play"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
 
 </ion-header>
 
@@ -28,7 +28,7 @@
     <ion-card *ngFor="let serie of lista_series" class="masters">
       <ion-item>
         <div id="name">
-          <h1 class="feed-title"><strong>{{ serie.original_name }}</strong></h1>
+          <h1 class="feed-title"><strong>{{ serie.name }}</strong></h1>
         </div>
       </ion-item>
 
